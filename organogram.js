@@ -708,7 +708,7 @@ var Orgvis = {
 		Orgvis.vars.apiCallInfo.topPosts = {
 			title:"Retrieval of top posts information",
 			description:"This call retrieves information about the top posts in the organogram (Posts that don't report to anyone)",
-			url:"http://"+Orgvis.vars.apiBase+"/doc/"+Orgvis.vars.global_typeOfOrg+"/"+Orgvis.vars.global_postOrg+"/top-post",
+			url:"//"+Orgvis.vars.apiBase+"/doc/"+Orgvis.vars.global_typeOfOrg+"/"+Orgvis.vars.global_postOrg+"/top-post",
 			parameters:""
 		};
 		
@@ -747,7 +747,7 @@ var Orgvis = {
 		Orgvis.vars.apiCallInfo.rootPost = {
 			title:"Retrieval of root post information",
 			description:"This call retrieves information about the root post in the organogram, such as their unit, grade and contact details.",
-			url:"http://"+Orgvis.vars.apiBase+"/doc/"+Orgvis.vars.global_typeOfOrg+"/"+Orgvis.vars.global_postOrg+"/post/"+Orgvis.vars.global_post,
+			url:"//"+Orgvis.vars.apiBase+"/doc/"+Orgvis.vars.global_typeOfOrg+"/"+Orgvis.vars.global_postOrg+"/post/"+Orgvis.vars.global_post,
 			parameters:""
 		};
 		
@@ -805,7 +805,7 @@ var Orgvis = {
 		Orgvis.vars.apiCallInfo.postReports = {
 				title:"Retrieval of posts that report to the root post",
 				description:"This call retrieves information about the posts that report to the root post, such as their unit, grade and contact details.",
-				url:"http://"+Orgvis.vars.apiBase+"/doc/"+Orgvis.vars.global_typeOfOrg+"/"+Orgvis.vars.global_postOrg+"/post/"+Orgvis.vars.global_post+"/reports-full",
+				url:"//"+Orgvis.vars.apiBase+"/doc/"+Orgvis.vars.global_typeOfOrg+"/"+Orgvis.vars.global_postOrg+"/post/"+Orgvis.vars.global_post+"/reports-full",
 				parameters:"?_pageSize="+pageSize
 		};		
 
@@ -893,7 +893,7 @@ var Orgvis = {
 		Orgvis.vars.apiCallInfo.juniorStaff = {
 				title:"Retrieval of junior staff who report to the root post",
 				description:"This call retrieves information about the junior staff that report to the posts within this organogram, such as their grade, title and profession.",
-				url:"http://"+Orgvis.vars.apiBase+"/doc/"+Orgvis.vars.global_typeOfOrg+"/"+Orgvis.vars.global_postOrg+"/post/"+Orgvis.vars.global_post+"/immediate-junior-staff",
+				url:"//"+Orgvis.vars.apiBase+"/doc/"+Orgvis.vars.global_typeOfOrg+"/"+Orgvis.vars.global_postOrg+"/post/"+Orgvis.vars.global_post+"/immediate-junior-staff",
 				parameters:"?_pageSize="+pageSize
 		};		
 
@@ -977,7 +977,7 @@ var Orgvis = {
 		Orgvis.vars.apiCallInfo.postStats = {
 				title:"Retrieval of a post's statistics data",
 				description:"An API call to retrieve the statistical data present for an individual post such as the combined salaries of their junior staff.",
-				url:"http://"+Orgvis.vars.apiBase+"/doc/"+Orgvis.vars.global_typeOfOrg+"/"+Orgvis.vars.global_postOrg+"/post/"+postID+"/statistics",
+				url:"//"+Orgvis.vars.apiBase+"/doc/"+Orgvis.vars.global_typeOfOrg+"/"+Orgvis.vars.global_postOrg+"/post/"+postID+"/statistics",
 				parameters:"?_pageSize=20"
 		};	
 				
@@ -1041,7 +1041,7 @@ var Orgvis = {
 		Orgvis.vars.apiCallInfo.postReportsOnDemand = {
 				title:"Retrieval of posts that report to the clicked post",
 				description:"This call retrieves information about the posts that report to the post that has been clicked within the organogram.",
-				url:"http://"+Orgvis.vars.apiBase+"/doc/"+Orgvis.vars.global_typeOfOrg+"/"+Orgvis.vars.global_postOrg+"/post/"+postID+"/immediate-reports",
+				url:"//"+Orgvis.vars.apiBase+"/doc/"+Orgvis.vars.global_typeOfOrg+"/"+Orgvis.vars.global_postOrg+"/post/"+postID+"/immediate-reports",
 				parameters:"?_pageSize="+pageSize
 		};		
 
@@ -1135,7 +1135,7 @@ var Orgvis = {
 		Orgvis.vars.apiCallInfo.juniorStaffOnDemand = {
 				title:"Retrieval of junior staff that report to the clicked post",
 				description:"This call retrieves information about the posts that report to the post that has been clicked within the organogram.",
-				url:"http://"+Orgvis.vars.apiBase+"/doc/"+Orgvis.vars.global_typeOfOrg+"/"+Orgvis.vars.global_postOrg+"/post/"+postID+"/immediate-junior-staff",
+				url:"//"+Orgvis.vars.apiBase+"/doc/"+Orgvis.vars.global_typeOfOrg+"/"+Orgvis.vars.global_postOrg+"/post/"+postID+"/immediate-junior-staff",
 				parameters:"?_pageSize="+pageSize
 		};		
 
@@ -2121,7 +2121,6 @@ var Orgvis = {
 				byGrade[gSlug].data.fteTotal += items[i].fullTimeEquivalent;
 			} else {
 			  	
-			  	var salaryRange;
 			  	if(typeof items[i].atGrade.payband != 'undefined' && typeof items[i].atGrade.payband.salaryRange != 'undefined'){
 					if(typeof items[i].atGrade.payband.salaryRange.label != 'undefined'){
 			  		salaryRange = addCommas(items[i].atGrade.payband.salaryRange.label[0]);
@@ -2385,7 +2384,7 @@ var Orgvis = {
 				html += '<div class="content ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">';
 				
 				if (tempID != "top") {
-					html+= '<p class="id"><span>Post ID</span><span class="value">'+tempID+'</span><a class="data postID" target="_blank" href="http://'+Orgvis.vars.apiBase+'/doc/'+Orgvis.vars.global_typeOfOrg+'/'+Orgvis.vars.global_postOrg+'/post/'+tempID+'">Data</a><a class="data center_organogram" href="?'+Orgvis.vars.global_orgSlug+'='+Orgvis.vars.global_postOrg+'&post='+tempID+(Orgvis.vars.previewMode?'&preview=true':'')+'">Load organogram</a></p>';
+					html+= '<p class="id"><span>Post ID</span><span class="value">'+tempID+'</span><a class="data postID" target="_blank" href="//'+Orgvis.vars.apiBase+'/doc/'+Orgvis.vars.global_typeOfOrg+'/'+Orgvis.vars.global_postOrg+'/post/'+tempID+'">Data</a><a class="data center_organogram" href="?'+Orgvis.vars.global_orgSlug+'='+Orgvis.vars.global_postOrg+'&post='+tempID+(Orgvis.vars.previewMode?'&preview=true':'')+'">Load organogram</a></p>';
 				}
 				else {
 					html+= '<p class="id"><span>Post ID</span><span class="value">'+tempID+'</span></p>';
@@ -2397,14 +2396,14 @@ var Orgvis = {
 				}				
 				
 				if(typeof nd.salaryRange[i] != 'undefined'){
-					html += '<p class="salary"><span>Salary</span><span class="value">'+addCommas(nd.salaryRange[i])+'</span><a class="data" target="_blank" href="http://'+Orgvis.vars.apiBase+'/doc/'+Orgvis.vars.global_typeOfOrg+'/'+Orgvis.vars.global_postOrg+'/post/'+tempID+'">Data</a></p>';					
+					html += '<p class="salary"><span>Salary</span><span class="value">'+addCommas(nd.salaryRange[i])+'</span><a class="data" target="_blank" href="//'+Orgvis.vars.apiBase+'/doc/'+Orgvis.vars.global_typeOfOrg+'/'+Orgvis.vars.global_postOrg+'/post/'+tempID+'">Data</a></p>';					
 				}			
 				
 				var postObj = Orgvis.vars.postList[tempID];
 						
 				if (tempID != "top") {
 					if(nd.gotStats) {
-						html += '<p class="salaryReports"><span>Combined salary of reporting posts</span><span class="value">'+nd.stats.salaryCostOfReports.formatted+'</span><a class="data" target="_blank" href="http://'+Orgvis.vars.apiBase+'/doc/'+Orgvis.vars.global_typeOfOrg+'/'+Orgvis.vars.global_postOrg+'/post/'+tempID+'/statistics" value="'+nd.stats.salaryCostOfReports.value+'">Data</a><span class="date">'+nd.stats.date.formatted+'</span>';	
+						html += '<p class="salaryReports"><span>Combined salary of reporting posts</span><span class="value">'+nd.stats.salaryCostOfReports.formatted+'</span><a class="data" target="_blank" href="//'+Orgvis.vars.apiBase+'/doc/'+Orgvis.vars.global_typeOfOrg+'/'+Orgvis.vars.global_postOrg+'/post/'+tempID+'/statistics" value="'+nd.stats.salaryCostOfReports.value+'">Data</a><span class="date">'+nd.stats.date.formatted+'</span>';	
 					} else {
 						html += '<p class="salaryReports"><span>Combined salary of reporting posts </span><span class="value">Checking...</span><img class="salaryReports" width="14" height="14" src="../images/loading_white.gif"></p>';
 					}	
@@ -2440,7 +2439,7 @@ var Orgvis = {
 				}
 						
 				if (typeof tempUnitLabel != 'undefined') {					
-					html+= '<p class="unit"><span>Unit(s)</span><span class="value">'+tempUnitLabel+'</span><a class="data" target="_blank" href="http://'+Orgvis.vars.apiBase+'/doc/'+Orgvis.vars.global_typeOfOrg+'/'+Orgvis.vars.global_postOrg+'/unit/'+tempUnitID+'">Data</a>';
+					html+= '<p class="unit"><span>Unit(s)</span><span class="value">'+tempUnitLabel+'</span><a class="data" target="_blank" href="//'+Orgvis.vars.apiBase+'/doc/'+Orgvis.vars.global_typeOfOrg+'/'+Orgvis.vars.global_postOrg+'/unit/'+tempUnitID+'">Data</a>';
 				}
 				
 				if(typeof hb[i].notes != 'undefined'){
